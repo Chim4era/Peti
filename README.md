@@ -1,3 +1,3 @@
 # Peti
 
-probálkozások
+Egy weboldal magamról.

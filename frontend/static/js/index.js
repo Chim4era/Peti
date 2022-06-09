@@ -1,3 +1,5 @@
+import magamrol from "./views/magamrol";
+
 const navigateTo = url => {
     history.pushState(null, null, url);
     router();
@@ -6,7 +8,7 @@ const navigateTo = url => {
 const router = async () => {
     const routes = [
         {path:"/projects", view: () => console.log("Viewing Projects")},
-        {path:"/magamrol", view: () => console.log("Viewing Magamrol")},
+        {path:"/magamrol", view: magamrol},
         {path:"/elerhetoseg", view: () => console.log("Viewing Elerhetoseg")},
     ];
 
@@ -27,14 +29,22 @@ const router = async () => {
     }
     };
 
+    const view = new match.route.view();
+
+    document.querySelector("#app").innerHTML = await view.getHtml();
+
     console.log(match.route.view());
 
 };
 
+window.addEventListener("popstate",router);
+
 document.addEventListener("DOMContentLoaded", () => {
+
     document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {
             e.preventDefault();
+            
             navigateTo(e.target.href);
         }
     });

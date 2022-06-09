@@ -1,4 +1,6 @@
-import magamrol from "./views/magamrol";
+import Magamrol from "./views/Magamrol.js";
+import Elerhetoseg from "./views/Elerhetoseg.js";
+import Projects from "./views/Projects.js";
 
 const navigateTo = url => {
     history.pushState(null, null, url);
@@ -7,9 +9,9 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        {path:"/projects", view: () => console.log("Viewing Projects")},
-        {path:"/magamrol", view: magamrol},
-        {path:"/elerhetoseg", view: () => console.log("Viewing Elerhetoseg")},
+        {path:"/projects", view: Projects},
+        {path:"/magamrol", view: Magamrol},
+        {path:"/elerhetoseg", view: Elerhetoseg},
     ];
 
     //gyökerek egyezésének vizsgálata
@@ -33,7 +35,6 @@ const router = async () => {
 
     document.querySelector("#app").innerHTML = await view.getHtml();
 
-    console.log(match.route.view());
 
 };
 

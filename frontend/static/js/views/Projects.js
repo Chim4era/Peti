@@ -7,7 +7,8 @@ export default class extends AbstractView {
     }
     async getHtml(){
         return`
-        <h1>hnope<h1>
+        <h1>Önéletrajzi weboldal<h1>
+        <p>felhasznált technologíák</p>
         
         
         `;

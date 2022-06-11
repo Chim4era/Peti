@@ -7,8 +7,7 @@ export default class extends AbstractView {
     }
     async getHtml(){
         return`
-        <h1>My name is dzsóváni dzsórdzsó, but my friends call me 
-        dzsórdzsó<h1>
+        <p>Nemes Péter vagyok a Szegedi tudományegyetemen tanulok gazdaságinformatikát.<p>
         
         
         `;
